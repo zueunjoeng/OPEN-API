@@ -46,9 +46,12 @@
           })
         })
         
-        
-        targetdivp[0].innerHTML = mapinfo[1].위도;
-        targetdivp[1].innerHTML = mapinfo[1].경도;
+         btns.forEach(function(ele, idx){
+          ele.addEventListener('click', function(){
+            targetdivp[0].innerHTML = mapinfo[idx].위도;
+            targetdivp[1].innerHTML = mapinfo[idx].경도;
+          })
+        })
     </script>
 </body>
 </html>
