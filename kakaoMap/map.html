@@ -19,18 +19,18 @@
 <script>
 //콜백함수
 
-mapoutput(37.5063076, 126.8853304);
+    mapoutput(37.5063076, 126.8853304); //실행할 때 값
 
-function mapoutput(a, b){
-    const mapContainer= document.getElementById('map'), // 지도를 표시할 div 
+    function mapoutput(a, b){
+    const mapContainer= document.getElementById('map'), //모형
         mapOption = { 
-        center: new kakao.maps.LatLng(37.5063076, 126.8853304), 
+        center: new kakao.maps.LatLng(a, b), 
 
         level: 3 
         };
     
     const map0 = new kakao.maps.Map(mapContainer, mapOption);
-}
+    }
 
 
 </script>
