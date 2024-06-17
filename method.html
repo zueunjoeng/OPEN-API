@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div id="tab">
+    <ul>
+        <li><button class="btn">tab1</button></li>
+        <li><button class="btn">tab2</button></li>
+        <li><button class="btn">tab3</button></li>
+    </ul>
+    <div id="tabcontent">
+        <p></p>
+        <p></p>
+    </div>
+</div>
+
+    <script>
+        const  mapinfo=[
+        {
+            위도:"34.21558", //실전에는 영어로. 어떤 서버에 올라갈지모르니까
+            경도:"126.788787"
+        },
+        {
+            위도:"000", 
+            경도:"1111"
+        },
+        {
+            위도:"00000", 
+            경도:"2222"
+        }
+
+        ]    
+        // const targetdiv = document.getElementById("tabcontent") //바닐라
+        const targetdivp = document.querySelectorAll("#tabcontent p") //p가 두개라 for each로 들어가야해
+        targetdivp.forEach(function(ele, idx){
+            ele.innerHTML = mapinfo[0].위도;
+            ele.innerHTML = mapinfo[0].경도;
+        })
+
+        targetdivp[0].innerHTML = mapinfo[0].위도;
+        targetdivp[1].innerHTML = mapinfo[0].경도;
+    </script>
+</body>
+</html>
+
