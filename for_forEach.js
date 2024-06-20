@@ -1,26 +1,23 @@
-const storetest = [
-    ["사과",10000, 7000] 
-    ,["파인애플", 5000, "" ]
-    ,["수박", 15000, "" ]
-    ,["체리", 13000, 9000 ]
-]
+//string [], {} -> JSON.parse
+//string -> array 전환 split 메서드
+//array -> string 전환 join 메서드 
+let charArray = ["H", "e", "l", "l", "o"];
+let word = charArray.join("");
+console.log(word, typeof word);
+// 출력: "Hello"
 
-//체리는 원가가 13000이고 할인해서 9000 판매 중입니다.
-//백틱을 써서 표현식
+let characters = "Hello";
+let charArray2 = characters.split("");
+console.log(charArray, typeof charArray2 );
+// 출력: ["H", "e", "l", "l", "o"]
 
-//1번. 하나의 패턴 확인
-console.log(`${storetest[3][0]}는 원가가 ${storetest[3][1]}이고 할인해서 ${storetest[3][2]} 판매 중입니다.`);
 
-//2번. x가 받아야할 변수 확인 -- for in문으로 처리
-for(x in storetest){
-    console.log(
-        `${storetest[x][0]}는 
-        원가가 ${storetest[x][1]}이고 할인해서 
-        ${storetest[x][2]} 판매 중입니다.`);
-}
+//서울 종로구 까지만 출력되도록 한다.(split을 사용해야합니다.)
+const stringdataapi ="서울|종로구|명륜3가|감나무집";
+const part = stringdataapi.split("|");
+console.log(part[0]+" "+part[1]);
 
-//3. for Each
-storetest.forEach(function(el, idx){
-    //console.log(el[0], "는 원가가", el[1], "이고 할인해서", el[2], "판매 중입니다."); 맞는 식이지만 조금 복잡하다.
-    console.log(`${el[0]}는 원가가 ${el[1]}이고 할인해서 ${el[2]}에 판매합니다. `)
-})
+//다른방법
+const parts = stringdataapi.split("|");
+const result = `${parts[0]} ${parts[1]}`;
+console.log(result); // "서울 종로구"
