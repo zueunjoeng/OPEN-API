@@ -1,19 +1,26 @@
-const store = ["사과", "파인애플", "수박", "체리"]
-//반드시 변수 const 선언
-//변수 존재여부, 값 편집 가능(변수X)
+const storetest = [
+    ["사과",10000, 7000] 
+    ,["파인애플", 5000, "" ]
+    ,["수박", 15000, "" ]
+    ,["체리", 13000, 9000 ]
+]
 
-for(let x=0; x < store.length; x++){
-    console.log("for문", store[x]);
-}; //값이 없어도 된다. for문이 안돌아갈뿐.
+//체리는 원가가 13000이고 할인해서 9000 판매 중입니다.
+//백틱을 써서 표현식
 
-//for in으로 하기
-for(let x in store){
-    console.log("for in문", store[x]);
-};
+//1번. 하나의 패턴 확인
+console.log(`${storetest[3][0]}는 원가가 ${storetest[3][1]}이고 할인해서 ${storetest[3][2]} 판매 중입니다.`);
 
-//forEach
-store.forEach(function(x, i){
-    //array에 직접 접근해서 값과 index 모두 접근 가능
-    //2개의 매개인자 중 앞의 것이 값이 저장되고 뒤의 변수가 index를 저장함
-    console.log("forEach문", x);
-});
+//2번. x가 받아야할 변수 확인 -- for in문으로 처리
+for(x in storetest){
+    console.log(
+        `${storetest[x][0]}는 
+        원가가 ${storetest[x][1]}이고 할인해서 
+        ${storetest[x][2]} 판매 중입니다.`);
+}
+
+//3. for Each
+storetest.forEach(function(el, idx){
+    //console.log(el[0], "는 원가가", el[1], "이고 할인해서", el[2], "판매 중입니다."); 맞는 식이지만 조금 복잡하다.
+    console.log(`${el[0]}는 원가가 ${el[1]}이고 할인해서 ${el[2]}에 판매합니다. `)
+})
